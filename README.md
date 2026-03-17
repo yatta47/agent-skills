@@ -2,6 +2,8 @@
 
 Reusable agent skills and sub-agents for [Claude Code](https://claude.ai/claude-code) and [Codex CLI](https://github.com/openai/codex).
 
+English | [日本語](README_ja.md)
+
 ## Skills
 
 | Skill | Description |
