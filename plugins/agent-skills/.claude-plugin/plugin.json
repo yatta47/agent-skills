@@ -1,8 +1,0 @@
-{
-  "name": "agent-skills",
-  "description": "Reusable agent skills for Claude Code and Codex CLI — TIL extraction, session feedback, Mermaid diagrams",
-  "version": "1.0.0",
-  "author": {
-    "name": "yatta47"
-  }
-}
