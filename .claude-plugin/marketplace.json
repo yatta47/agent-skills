@@ -1,0 +1,14 @@
+{
+  "name": "yatta47-agent-skills",
+  "owner": {
+    "name": "yatta47"
+  },
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "source": ".",
+      "description": "Reusable agent skills for Claude Code and Codex CLI — TIL extraction, session feedback, Mermaid diagrams",
+      "version": "1.0.0"
+    }
+  ]
+}
