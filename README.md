@@ -21,7 +21,11 @@ Reusable agent skills and sub-agents for [Claude Code](https://claude.ai/claude-
 ### Claude Code (Plugin)
 
 ```bash
-/plugin install agent-skills@yatta47/agent-skills
+# Step 1: Add this repository as a marketplace
+/plugin marketplace add yatta47/agent-skills
+
+# Step 2: Install the plugin
+/plugin install agent-skills@yatta47-agent-skills
 ```
 
 Skills are available with the namespace prefix:
