@@ -18,57 +18,40 @@ Reusable agent skills and sub-agents for [Claude Code](https://claude.ai/claude-
 
 ## Installation
 
-### Claude Code (Plugin)
+### Claude Code (skills.sh)
 
 ```bash
-# Step 1: Add this repository as a marketplace
-/plugin marketplace add yatta47/agent-skills
-
-# Step 2: Install the plugin
-/plugin install agent-skills@yatta47-agent-skills
+npx skills add yatta47/agent-skills
 ```
 
-Skills are available with the namespace prefix:
-
-```
-/agent-skills:til-extract
-/agent-skills:session-feedback
-/agent-skills:pretty-mermaid
-```
-
-The `codex-agent` sub-agent is automatically available via the Agent tool after installation.
-
-### Codex CLI
-
-Clone and symlink:
-
-```bash
-git clone https://github.com/yatta47/agent-skills.git
-cd your-project
-ln -s /path/to/agent-skills/skills .agents/skills
-```
-
-Then use skills directly:
-
-```
-/til-extract
-/session-feedback
-/pretty-mermaid
-```
+This installs skills directly into your project's `.claude/skills/` directory.
 
 ### Claude Code (Manual)
 
 Copy skills and agents into your project:
 
 ```bash
+git clone https://github.com/yatta47/agent-skills.git /tmp/agent-skills
+
 # Skills
-cp -r agent-skills/skills/til-extract .claude/skills/
-cp -r agent-skills/skills/session-feedback .claude/skills/
-cp -r agent-skills/skills/pretty-mermaid .claude/skills/
+cp -r /tmp/agent-skills/skills/til-extract .claude/skills/
+cp -r /tmp/agent-skills/skills/session-feedback .claude/skills/
+cp -r /tmp/agent-skills/skills/pretty-mermaid .claude/skills/
 
 # Agents
 mkdir -p .claude/agents
-cp agent-skills/agents/codex-agent.md .claude/agents/
+cp /tmp/agent-skills/agents/codex-agent.md .claude/agents/
+
+rm -rf /tmp/agent-skills
+```
+
+### Codex CLI
+
+Clone and symlink:
+
+```bash
+git clone https://github.com/yatta47/agent-skills.git vendor/agent-skills
+ln -s vendor/agent-skills/skills .agents/skills
 ```
 
 ## Configuration
