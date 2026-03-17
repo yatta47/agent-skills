@@ -28,6 +28,12 @@ npx skills add yatta47/agent-skills
 
 This installs skills directly into your project's `.claude/skills/` directory.
 
+> **Note**: skills.sh installs skills only. To use the codex-agent sub-agent, copy it manually:
+> ```bash
+> mkdir -p .claude/agents
+> curl -o .claude/agents/codex-agent.md https://raw.githubusercontent.com/yatta47/agent-skills/main/agents/codex-agent.md
+> ```
+
 ### Claude Code (Manual)
 
 Copy skills and agents into your project:

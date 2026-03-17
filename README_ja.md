@@ -28,6 +28,12 @@ npx skills add yatta47/agent-skills
 
 プロジェクトの `.claude/skills/` に直接インストールされます。
 
+> **注意**: skills.sh ではスキルのみインストールされます。codex-agent サブエージェントを使うには手動でコピーしてください:
+> ```bash
+> mkdir -p .claude/agents
+> curl -o .claude/agents/codex-agent.md https://raw.githubusercontent.com/yatta47/agent-skills/main/agents/codex-agent.md
+> ```
+
 ### Claude Code（手動）
 
 スキルとエージェントをプロジェクトにコピー:
