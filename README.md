@@ -1,6 +1,6 @@
 # agent-skills
 
-Reusable agent skills for [Claude Code](https://claude.ai/claude-code) and [Codex CLI](https://github.com/openai/codex).
+Reusable agent skills and sub-agents for [Claude Code](https://claude.ai/claude-code) and [Codex CLI](https://github.com/openai/codex).
 
 ## Skills
 
@@ -10,6 +10,12 @@ Reusable agent skills for [Claude Code](https://claude.ai/claude-code) and [Code
 | [session-feedback](skills/session-feedback/) | Review a session and propose improvements to project rules, skills, and workflows |
 | [pretty-mermaid](skills/pretty-mermaid/) | Render beautiful Mermaid diagrams as SVG or ASCII art with 15+ themes |
 
+## Agents (Sub-agents)
+
+| Agent | Description |
+|-------|-------------|
+| [codex-agent](agents/codex-agent.md) | Use Codex CLI as a second-opinion sub-agent for code review, design consultation, research, and more |
+
 ## Installation
 
 ### Claude Code (Plugin)
@@ -18,13 +24,15 @@ Reusable agent skills for [Claude Code](https://claude.ai/claude-code) and [Code
 /plugin install agent-skills@yatta47/agent-skills
 ```
 
-Then use skills with the namespace prefix:
+Skills are available with the namespace prefix:
 
 ```
 /agent-skills:til-extract
 /agent-skills:session-feedback
 /agent-skills:pretty-mermaid
 ```
+
+The `codex-agent` sub-agent is automatically available via the Agent tool after installation.
 
 ### Codex CLI
 
@@ -44,12 +52,19 @@ Then use skills directly:
 /pretty-mermaid
 ```
 
-### Manual (any agent)
+### Claude Code (Manual)
 
-Copy the skill folder into your project's skills directory:
+Copy skills and agents into your project:
 
 ```bash
+# Skills
 cp -r agent-skills/skills/til-extract .claude/skills/
+cp -r agent-skills/skills/session-feedback .claude/skills/
+cp -r agent-skills/skills/pretty-mermaid .claude/skills/
+
+# Agents
+mkdir -p .claude/agents
+cp agent-skills/agents/codex-agent.md .claude/agents/
 ```
 
 ## Configuration
